@@ -1,0 +1,18 @@
+<template name="pickFive">
+    <h1 style="color: [[section.fontColor]]; font-family: [[section.fontType]];"  >[[section.headingTitle]]</h1>
+    <h3 style="color: [[section.fontColor]];"  >[[section.headingSubtitle]]</h3>
+    <div class="listContainer">
+        <div class="adCol" ng-repeat="adCampaign in section.campaigns">
+            <a href=[[adCampaign.clickProxyURL]]>
+                <div class="inner">
+                    <div class="wrapper clearfix">
+                        <img ng-src=[[adCampaign.productThumbnail]] err-src="/images/IconPlaceholder.png" title=[[adCampaign.productName]] class="adThumbnail"/>
+                        <h2>[[adCampaign.productName]]</h2>
+                        <img class="btn_download" src="../images/download.png" alt="Download"/>
+                    </div>
+                    <img src=[[adCampaign.impressionTrackingURL]] class="trackingImg"/>
+                </div>
+            </a>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,72 @@
+<template name="appwalllist">
+    <div class="loadingView">
+        <div class="wrapper">
+            <div class="spinner">
+                <div class="spinner-container container1">
+                    <div class="circle1"></div>
+                    <div class="circle2"></div>
+                    <div class="circle3"></div>
+                    <div class="circle4"></div>
+                </div>
+                <div class="spinner-container container2">
+                    <div class="circle1"></div>
+                    <div class="circle2"></div>
+                    <div class="circle3"></div>
+                    <div class="circle4"></div>
+                </div>
+                <div class="spinner-container container3">
+                    <div class="circle1"></div>
+                    <div class="circle2"></div>
+                    <div class="circle3"></div>
+                    <div class="circle4"></div>
+                </div>
+            </div>
+            <h4>RECOMMENDING YOU</h4>
+            <h3>Free Apps and Games</h3>
+        </div>
+        <div class="errModal" ng-hide="isOnline" >
+            <div class="content">
+                <h1>Sorry, something went wrong.</h1>
+                <p>There seems to be no network connection, please try again soon.</p>
+                <div class="btn lgr_btn" ng-click="reTry()">Re-try</div>
+            </div>
+        </div>
+        <div class="EndofLoadingModal" >
+            <div class="content">
+                <p>No new content available,<br/> try again soon.</p>
+                <div class="btn lgr_btn" ng-click="okThen()">OK</div>
+            </div>
+        </div>
+    </div>
+    <div class="appListView stealth1 light">
+        <div class="header">
+            <div class="topNav ">
+                <ul class="clearfix">
+                    <li ng-repeat="tab in tabs" ng-click="onClickTab(tab)" ng-class="[isActiveTab(tab)]">[[tab.title]]<span></span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="appListPanel clearfix ">
+            <div id="highlighView" class="viewContainer animateEnable flipEffect1 blurEffect" ng-show="isDisplay('highlightView')" ng-class="[showTab('highlightView')]">
+                <div class="campaignSection clearfix" ng-repeat="section in highlightData.sections" ng-class="section.templateName"
+                     style="background:url([[section.backgroundImage]]) no-repeat top center [[section.backgroundColor]];" >
+                    <div meteor-include = [[section.templateName]]></div>
+                </div>
+            </div>
+            <div id="appsView" class="viewContainer animateEnable flipEffect1 blurEffect" ng-show="isDisplay('appsView')" ng-class="[showTab('appsView')]">
+                <div class="campaignSection clearfix" ng-repeat="section in appsData.sections" ng-class="section.templateName"
+                     style="background:url([[section.backgroundImage]]) no-repeat top center [[section.backgroundColor]];" >
+                    <div meteor-include = [[section.templateName]]></div>
+                </div>
+            </div>
+            <div id="gamesView" class="viewContainer animateEnable flipEffect1 blurEffect" ng-show="isDisplay('gamesView')" ng-class="[showTab('gamesView')]">
+                <div class="campaignSection clearfix" ng-repeat="section in gamesData.sections" ng-class="section.templateName"
+                     style="background:url([[section.backgroundImage]]) no-repeat top center [[section.backgroundColor]];" >
+                    <div meteor-include = [[section.templateName]]></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</template>

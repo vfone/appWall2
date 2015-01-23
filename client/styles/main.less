@@ -1,0 +1,832 @@
+@font-face {
+  font-family: 'robotobold';
+  src: url('fonts/roboto-bold-webfont.eot');
+  src: url('fonts/roboto-bold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/roboto-bold-webfont.woff') format('woff'),
+  url('fonts/roboto-bold-webfont.ttf') format('truetype'),
+  url('fonts/roboto-bold-webfont.svg#robotobold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'robotoregular';
+  src: url('fonts/roboto-regular-webfont.eot');
+  src: url('fonts/roboto-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/roboto-regular-webfont.woff') format('woff'),
+  url('fonts/roboto-regular-webfont.ttf') format('truetype'),
+  url('fonts/roboto-regular-webfont.svg#robotoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'robotothin';
+  src: url('fonts/roboto-thin-webfont.eot');
+  src: url('fonts/roboto-thin-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/roboto-thin-webfont.woff') format('woff'),
+  url('fonts/roboto-thin-webfont.ttf') format('truetype'),
+  url('fonts/roboto-thin-webfont.svg#robotothin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'roboto_condensedregular';
+  src: url('fonts/robotocondensed-regular-webfont.eot');
+  src: url('fonts/robotocondensed-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/robotocondensed-regular-webfont.woff') format('woff'),
+  url('fonts/robotocondensed-regular-webfont.ttf') format('truetype'),
+  url('fonts/robotocondensed-regular-webfont.svg#roboto_condensedregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'roboto_condensedbold';
+  src: url('fonts/robotocondensed-bold-webfont.eot');
+  src: url('fonts/robotocondensed-bold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/robotocondensed-bold-webfont.woff') format('woff'),
+  url('fonts/robotocondensed-bold-webfont.ttf') format('truetype'),
+  url('fonts/robotocondensed-bold-webfont.svg#roboto_condensedbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+a{
+  text-decoration: none;
+}
+h2{
+  font-family: roboto_condensedregular;
+  font-size: 15px;
+  color: #000000;
+  margin: 5px 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+h3{
+  font-family: robotothin;
+  font-size: 21px;
+  color: #ffffff;
+  margin: 5px 0px;
+}
+h3 strong{
+  font-family: robotobold;
+}
+h4{
+  font-family: robotobold;
+  font-size: 9px;
+  color: #ffffff;
+  margin: 5px 0px;
+}
+*{
+  padding: 0px;
+  margin: 0px;
+  line-height: 120%;
+}
+html, body, .container,.view {
+  height: 100%;
+
+}
+.loadingView{
+  width: 100%;
+  height: 100%;
+  background: #0099f7;
+  text-align: center;
+  .wrapper{
+    padding: 50% 0 0 0;
+  }
+  .spinner {
+    margin: 100px auto;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    .spinner-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .container1 > div,.container2 > div,.container3 > div{
+    width: 6px;
+    height: 6px;
+    background-color: #ffffff;
+
+    border-radius: 100%;
+    position: absolute;
+    -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+    animation: bouncedelay 1.2s infinite ease-in-out;
+    /* Prevent first frame from flickering when animation starts */
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  .container1{
+    .circle2 {
+      -webkit-animation-delay: -0.9s;
+      animation-delay: -0.9s;
+    }
+    .circle3 {
+      -webkit-animation-delay: -0.6s;
+      animation-delay: -0.6s;
+    }
+    .circle4 {
+      -webkit-animation-delay: -0.3s;
+      animation-delay: -0.3s;
+    }
+  }
+  .container2 {
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+    .circle1 {
+      -webkit-animation-delay: -1.1s;
+      animation-delay: -1.1s;
+    }
+    .circle2 {
+      -webkit-animation-delay: -0.8s;
+      animation-delay: -0.8s;
+    }
+    .circle3 {
+      -webkit-animation-delay: -0.5s;
+      animation-delay: -0.5s;
+    }
+    .circle4 {
+      -webkit-animation-delay: -0.2s;
+      animation-delay: -0.2s;
+    }
+  }
+  .container3 {
+    -webkit-transform: rotateZ(90deg);
+    transform: rotateZ(90deg);
+    .circle1 {
+      -webkit-animation-delay: -1.0s;
+      animation-delay: -1.0s;
+    }
+    .circle2 {
+      -webkit-animation-delay: -0.7s;
+      animation-delay: -0.7s;
+    }
+    .circle3 {
+      -webkit-animation-delay: -0.4s;
+      animation-delay: -0.4s;
+    }
+    .circle4 {
+      -webkit-animation-delay: -0.1s;
+      animation-delay: -0.1s;
+    }
+  }
+  .circle1 { top: 0; left: 0; }
+  .circle2 { top: 0; right: 0; }
+  .circle3 { right: 0; bottom: 0; }
+  .circle4 { left: 0; bottom: 0; }
+
+  h3{
+    font-family: robotothin;
+    font-size: 17px;
+    color: #ffffff;
+    margin: 5px 0px;
+  }
+  h4{
+    font-family: robotobold;
+    font-size: 9px;
+    color: #ffffff;
+    margin: 5px 0px;
+  }
+  .errModal, .EndofLoadingModal{
+    position: absolute;
+    width: 240px;
+    margin: 55% 0px 0px -120px;
+    min-height: 50%;
+    left: 50%;
+    top:0px;
+    display: none;
+    background-color: rgba(255,255,255,1);
+    border-radius: 3px;
+    .content{
+      font-family: robotothin;
+      font-size: 15px;
+      padding: 50px 35px 20px 35px;
+      color: #0099f7;
+    }
+    h1{
+      font-family: robotoregular;
+      font-size:20px;
+      margin-bottom: 20px;
+    }
+  }
+  .errModal .content p{
+    font-family: robotothin;
+    font-size:19px;
+    line-height: 130%;
+    margin-bottom: 40px;
+  }
+  .EndofLoadingModal .content p{
+    font-family: robotoregular;
+    font-size:19px;
+    line-height: 130%;
+    margin-bottom: 40px;
+  }
+}
+
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% {
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+}
+
+
+
+.appListView{
+  margin-top: -5px;
+  display:none;
+  font-family: robotoregular;
+  &.light{
+    color:#4e4e4e;
+    background: #f5f5f5;
+    h1{
+      color:#616161;
+      font-size:24px;
+      font-family: robotoregular;
+    }
+    h2{
+      color:#000000;
+      font-family: robotoregular;
+    }
+    h3{
+      color:#9D9D9D;
+      font-size: 16px;
+      margin: 3px 15px 15px 15px;
+      font-family: robotoregular;
+    }
+    h4{
+      color:#4e4e4e;
+      font-family: 'robotoregular';
+    }
+    h5{
+      color:#4e4e4e;
+      font-family: 'robotoregular';
+    }
+    p{
+      color:#616161;
+      font-size: 12px;
+    }
+    .inner{
+      background:#ffffff;
+    }
+  }
+  &.stealth{
+    color:#ffffff;
+    background: #263238;
+    h1{
+      color:#ffffff;
+      font-size: 24px;
+      font-family: robotoregular;
+    }
+    h2{
+      color:#ffffff;
+      font-family: robotoregular;
+    }
+    h3{
+      color:#ffffff;
+      font-size: 16px;
+      margin: 3px 15px 15px 15px;
+      font-family: robotoregular;
+    }
+    h4{
+      color:#ffffff;
+      font-family: 'robotoregular';
+    }
+    h5{
+      color:#ffffff;
+      font-family: 'robotoregular';
+    }
+    p{
+      color:#ffffff;
+      font-size: 12px;
+    }
+    .inner{
+      background:#37474F;
+    }
+  }
+  .header{
+    background: url('../images/headerbg.png') no-repeat top center transparent;
+    background-size: cover;
+    min-height: 200px;
+    margin-bottom: 5px;
+    position: relative;
+    .topNav{
+      width: 100%;
+      position: absolute;
+      bottom: 40px;
+        ul{
+          position: relative;
+          margin: 0px 8px 0px 8px;
+          li{
+            display: inline-block;
+            float: left;
+            width: 33%;
+            text-align: center;
+            line-height: 150%;
+            color:#ffffff;
+            font-family: 'robotothin';
+            cursor: pointer;
+            span{
+              display: block;
+              height: 2px;
+              width: 0;
+              background: white;
+            }
+            &.active{
+              span{
+                width:100%;
+                -webkit-animation:1s stringActive ease;
+                animation:1s stringActive ease;
+              }
+
+            }
+            &.inactive{
+              span{
+                width:0;
+                -webkit-animation: .5s stringInactive ease;
+                animation: .5s stringInactive ease ;
+              }
+
+            }
+        }
+      }
+    }
+  }
+  .appListPanel{
+    margin-top:-40px;
+    .viewContainer{
+      z-index: 100;
+    }
+    .campaignSection{
+      margin-bottom:20px;
+    }
+    /*simpleThree Style*/
+    .simpleThree{
+      text-align: center;
+      .adContainer{
+        margin-right: 9px;
+        .adCol{
+          width: 33.33%;
+          float: left;
+          .inner{
+            margin: 0px 0px 9px 9px;
+            position: relative;
+            border-radius: 3px;
+            box-shadow: 0px 1px 4px 0px rgba(0,6,0,0.3);
+          }
+          .wrapper{
+            padding: 8px;
+            .adThumbnail{
+              width: 100%;
+              height: auto;
+              border-radius: 3px;
+            }
+            h2{
+              font-size:13px;
+              line-height: 150%;
+              margin-bottom: 20px;
+            }
+          }
+        }
+      }
+
+    }
+    /*heroFour Style*/
+    .heroFour {
+      text-align: center;
+      .heroCol {
+        margin: 0 9px 9px 9px;
+        .inner {
+          border-radius: 3px;
+          position: relative;
+          box-shadow: 0px 1px 4px 0px rgba(0, 6, 0, 0.4);
+        }
+        .wrapper {
+          padding: 8px;
+          text-align: left;
+          overflow: hidden;
+          .adThumbnail {
+            width: 40%;
+            height: auto;
+            border-radius: 3px;
+            float: left;
+          }
+          .campaignInfo {
+            float: left;
+            width: 60%;
+            .infoinner {
+              padding: 0 10px;
+              border: 0px;
+              h2 {
+                margin: 0px;
+                font-size: 17px;
+                font-weight: bold;
+              }
+              .appRate{
+                margin: 5px 0 8px 0;
+              }
+              p{
+                margin-bottom: 20px;
+                height:30px;
+                overflow: hidden;
+                &:after{
+                  width:100%;
+                  height:10px;
+                  display: block;
+                  border:1px solid red;
+                }
+              }
+              .btn_download {
+                color: #00BBD3;
+                font-size: 14px;
+                margin-top: 10px;
+                position: absolute;
+                font-family: 'robotobold';
+                bottom: 12px;
+                img {
+                  width: 20px;
+                  height: auto;
+                }
+              }
+            }
+
+          }
+
+        }
+      }
+      .belowcontainer {
+        margin-right: 9px;
+        .adCol {
+          width: 33.33%;
+          float: left;
+          .inner {
+            margin: 0px 0px 9px 9px;
+            position: relative;
+            border-radius: 3px;
+            box-shadow: 0px 1px 4px 0px rgba(0, 6, 0, 0.4);
+          }
+          .wrapper {
+            padding: 8px;
+            text-align: center;
+            .adThumbnail {
+              width: 100%;
+              height: auto;
+              border-radius: 3px;
+            }
+            h2 {
+              font-size:13px;
+              line-height: 150%;
+              margin-bottom: 20px;
+            }
+          }
+        }
+      }
+    }
+    /*rowTwo Style*/
+    .rowTwo{
+      text-align:center;
+      margin-right: 9px;
+      padding:10px 0;
+      h2{
+        font-size:25px;
+        width:70%;
+        margin:0 auto 5px auto;
+      }
+      h5{
+        font-size:15px;
+        width:70%;
+        margin:0 auto 10px auto;
+      }
+      .adCol{
+        margin: 0px;
+
+        width:100%;
+        .inner{
+          border-radius:3px;
+          margin:0 0 8px 8px;
+          position: relative;
+          border-bottom:1px solid rgba(0,0,0,0.3);
+          box-shadow: 0px 1px 4px 0px rgba(0,6,0,0.3);
+        }
+        .wrapper {
+          padding: 8px;
+          text-align: left;
+          overflow: hidden;
+          .adThumbnail {
+            width: 40%;
+            height: auto;
+            border-radius: 3px;
+            float: left;
+          }
+          .campaignInfo {
+            float: left;
+            width: 60%;
+            .infoinner {
+              padding: 0 10px;
+              border: 0px;
+              h2 {
+                margin: 0px;
+                font-size: 17px;
+                font-weight: bold;
+              }
+              .appRate{
+                margin: 5px 0 8px 0;
+              }
+              p{
+                margin-bottom: 20px;
+                height:30px;
+                overflow: hidden;
+              }
+              .btn_download {
+                color: #00BBD3;
+                font-size: 14px;
+                margin-top: 10px;
+                position: absolute;
+                font-family: 'robotobold';
+                bottom: 12px;
+                img {
+                  width: 20px;
+                  height: auto;
+                }
+              }
+            }
+
+          }
+
+        }
+
+      }
+    }
+    /*columnTwo Style*/
+    .columnTwo{
+      text-align:center;
+      padding:10px 0;
+
+      .headeringimage{
+        width:20%;
+        height:auto;
+        margin:10px auto;
+      }
+      h2{
+        font-size:20px;
+        width:70%;
+        margin:0 auto 5px auto;
+      }
+      h5{
+        font-size:12px;
+        width:70%;
+        margin:0 auto 10px auto;
+      }
+      .adContainer{
+        margin:20px 9px 0 0;
+        .adCol{
+          width: 50%;
+          float: left;
+          .inner{
+            margin: 0px 0px 9px 9px;
+            position: relative;
+            border-radius: 3px;
+            box-shadow: 0px 1px 4px 0px rgba(0,6,0,0.3);
+          }
+          .wrapper{
+            padding: 8px;
+            text-align: left;
+            .adThumbnail{
+              width: 100%;
+              height: auto;
+              border-radius: 3px;
+            }
+            h2{
+              width:60%;
+              height:40px;
+              margin:5px 0;
+              font-size:15px;
+              line-height:150%;
+              white-space: normal;
+            }
+            .btn_download{
+              width:20px;
+              height:auto;
+              float:right;
+            }
+          }
+        }
+      }
+
+    }
+    /*pickFive Style*/
+    .pickFive{
+      text-align:center;
+      padding:10px 0;
+      .headeringimage{
+        width:20%;
+        height:auto;
+        margin:10px auto;
+      }
+      h2{
+        font-size:25px;
+        width:70%;
+        margin:0 auto 5px auto;
+      }
+      h5{
+        font-size:15px;
+        width:70%;
+        margin:0 auto 10px auto;
+      }
+      .listContainer{
+        box-shadow: 0px 1px 4px 0px rgba(0,6,0,0.3);
+        .adCol{
+          width: 100%;
+          .inner{
+            position: relative;
+            border-bottom:1px solid rgba(0,0,0,0.1);
+          }
+          .wrapper{
+            padding: 8px;
+            text-align: left;
+            overflow:hidden;
+            .adThumbnail{
+              width: 50px;
+              height: auto;
+              border-radius: 3px;
+              float:left;
+            }
+            h2{
+              width:50%;
+              margin:5px 0 0 15px;
+              font-size:13px;
+              line-height:40px;
+              float:left;
+            }
+            .btn_download{
+              width:20px;
+              height:auto;
+              float:right;
+              position:absolute;
+              right:10px;
+              top:40%;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+
+/*animation style*/
+.animateEnable.active{
+   &.flipEffect{
+     -webkit-animation:.5s flipInX ease;
+     animation:.5s flipInX ease;
+
+   }
+   &.blurEffect{
+     -webkit-animation:0.5s blur ease;
+     animation:0.5s blur ease;
+
+   }
+ }
+
+.animateEnable.inactive{
+  &.flipEffect{
+    -webkit-animation:2s blurOut ease;
+    animation:2s blurOut ease;
+  }
+  &.blurEffect{
+    -webkit-animation:2s blurOut ease;
+    animation:2s blurOut ease;
+  }
+}
+
+
+@keyframes stringActive {
+  0%		{width:0;}
+  100%	    {width:100%;}
+}
+@-webkit-keyframes stringActive {
+  0%		{width:0;}
+  100%	    {width:100%;}
+}
+
+@keyframes stringInactive {
+  0%		{width:100%;}
+  100%	    {width:0;}
+}
+@-webkit-keyframes stringInactive {
+  0%		{width:100%;}
+  100%	    {width:0;}
+}
+
+
+@-webkit-keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+@keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -ms-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: perspective(400px);
+    -ms-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+@keyframes blur {
+  0%		{filter: blur(20px); opacity:0;}
+  100%	    {filter: blur(0px); opacity:1;}
+}
+@-webkit-keyframes blur {
+  0%		{-webkit-filter: blur(20px); opacity:0;}
+  100%	    {-webkit-filter: blur(0px); opacity:1;}
+}
+@keyframes blurOut {
+  0%		{filter: blur(0px); opacity:1; }
+  100%	    {filter: blur(20px); opacity:0; }
+}
+@-webkit-keyframes blurOut {
+  0%		{-webkit-filter: blur(0px); opacity:1; }
+  100%	    {-webkit-filter: blur(20px); opacity:0; }
+}
+
+
+
+
+
+.trackingImg{
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  margin-top: -10px;
+  background: transparent;
+}
+.btn{
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 10px auto;
+  border-radius: 2px;
+  font-family: 'roboto_condensedbold';
+  background: #0099f7;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 7px 25px;
+  box-shadow: 0px 3px 0px 0px #0089ce;
+  &:active{
+    background: #0089ce;
+    box-shadow: 0px 3px 0px 0px #0099f7;
+  }
+  &#btn_load{
+    font-size: 22px;
+    margin: 5px auto 20px 12px;
+    width: 95%;
+    display: block;
+    padding: 10px 0 ;
+    img{
+      width: 20px;
+      padding-right: 10px;
+      margin-bottom: -3px;
+    }
+  }
+}
+.clearfix{
+  clear: both;
+  &:before, &:after{
+    display: table;
+    content: " ";
+  }
+}
+/* Customize container */
+@media (min-width:481px) {
+
+}

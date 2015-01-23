@@ -1,0 +1,23 @@
+<template name="rowTwo">
+    <h1 style="color: [[section.fontColor]]; font-family: [[section.fontType]];"  >[[section.headingTitle]]</h1>
+    <h3 style="color: [[section.fontColor]];"  >[[section.headingSubtitle]]</h3>
+    <div class="adCol" ng-repeat="adCampaign in section.campaigns">
+        <a href=[[adCampaign.clickProxyURL]]>
+            <div class="inner">
+                <div class="wrapper clearfix">
+                    <img ng-src=[[adCampaign.productThumbnail]] err-src="/images/IconPlaceholder.png" title=[[adCampaign.productName]] class="adThumbnail"/>
+                    <div class="campaignInfo">
+                        <div class="infoinner">
+                            <h2>[[adCampaign.productName]]</h2>
+                            <img class="appRate" src=[[adCampaign.averageRatingImageURL]] title=[[adCampaign.rating]] />
+                            <p>[[adCampaign.productDescription]]</p>
+                            <div  class="btn_download"  href=[[adCampaign.clickProxyURL]]><img src="../images/download.png" alt="Download"/>  <span>DOWNLOAD</span></div>
+                        </div>
+                    </div>
+
+                </div>
+                <img src=[[adCampaign.impressionTrackingURL]] class="trackingImg"/>
+            </div>
+        </a>
+    </div>
+</template>
