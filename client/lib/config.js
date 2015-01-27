@@ -67,6 +67,8 @@ config.factory('settingFactory', function() {
     else{
         apisettingfactory.apiURL = apisettingfactory.appiaURL;
     }
+    // TODO: testing loading JSON from Netoss
+    apisettingfactory.apiURL = 'http://192.168.0.35/SampleData/appWall.php?url=http://192.168.0.35/SampleData/appWall.json';
     console.log(apisettingfactory.apiURL);
     return apisettingfactory;
 });

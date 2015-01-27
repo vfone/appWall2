@@ -26,9 +26,8 @@ appWall.controller('appWallCtrl', ['$scope', '$http',  'settingFactory',
         $scope.bufferSize = settingFactory.bufferSize; //each time will load 6 extra campaigns
         $scope.bufferTimes = 0;
         $scope.loadmoreHit = 0; //record for how many times loadmore button been hit
-        //$scope.apiURL = settingFactory.apiURL;
-        // TODO: testing loading local JSON
-        $scope.apiURL = 'http://192.168.0.35/SampleData/appWall.php?url=http://192.168.0.35/SampleData/appWall.json';
+        $scope.apiURL = settingFactory.apiURL;
+
         $scope.adCampaigns = [];
         $scope.extraCampaigns = [];
         $scope.readyToRun = function(){
@@ -70,15 +69,38 @@ appWall.controller('appWallCtrl', ['$scope', '$http',  'settingFactory',
             $scope.wasTabIndex = $scope.currentTabIndex;
             $scope.currentTab = tab.viewer;
             $scope.currentTabIndex = tab.index;
+
         };
         $scope.isActiveTab = function(tab) {
-
-            if(tab.viewer == $scope.currentTab){
-                return "active";
-
+            console.log(tab.index + ": viewer = " + tab.viewer + ", currentTab = " + $scope.currentTab + ", wasTabIndex = " + $scope.wasTabIndex + ", currentTabIndex = " + $scope.currentTabIndex);
+            //assign class to top nav
+            if(tab.index == $scope.currentTabIndex){
+                console.log( "active");
+                if($scope.wasTabIndex > $scope.currentTabIndex){
+                    //moving from right
+                    return "active fromRight";
+                }
+                else if($scope.wasTabIndex < $scope.currentTabIndex){
+                    //moving from left
+                    return "active fromLeft";
+                }
+                else{
+                    return "active";
+                }
             }
             else{
-                return "inactive";
+                console.log( "inactive");
+                if($scope.wasTabIndex > $scope.currentTabIndex){
+                    //moving from right
+                    return "inactive toLeft";
+                }
+                else if($scope.wasTabIndex < $scope.currentTabIndex){
+                    //moving from left
+                    return "inactive toRight";
+                }
+                else{
+                    return "inactive";
+                }
             }
         };
         $scope.isDisplay = function(viewName){
