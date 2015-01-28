@@ -51,7 +51,7 @@ appWall.controller('appWallCtrl', ['$scope', '$http',  'settingFactory',
         //TODO: need to optimise code below for production
         $scope.tabs = [{
             index: 0,
-            title: 'HIGHLIGHT',
+            title: 'HIGHLIGHTS',
             viewer: 'highlightView'
         }, {
             index: 1,
@@ -75,6 +75,7 @@ appWall.controller('appWallCtrl', ['$scope', '$http',  'settingFactory',
             console.log(tab.index + ": viewer = " + tab.viewer + ", currentTab = " + $scope.currentTab + ", wasTabIndex = " + $scope.wasTabIndex + ", currentTabIndex = " + $scope.currentTabIndex);
             //assign class to top nav
             if(tab.index == $scope.currentTabIndex){
+                /*
                 console.log( "active");
                 if($scope.wasTabIndex > $scope.currentTabIndex){
                     //moving from right
@@ -85,10 +86,12 @@ appWall.controller('appWallCtrl', ['$scope', '$http',  'settingFactory',
                     return "active fromLeft";
                 }
                 else{
+                */
                     return "active";
-                }
+                //}
             }
             else{
+                /*
                 console.log( "inactive");
                 if($scope.wasTabIndex > $scope.currentTabIndex){
                     //moving from right
@@ -99,8 +102,9 @@ appWall.controller('appWallCtrl', ['$scope', '$http',  'settingFactory',
                     return "inactive toRight";
                 }
                 else{
+                */
                     return "inactive";
-                }
+                //}
             }
         };
         $scope.isDisplay = function(viewName){

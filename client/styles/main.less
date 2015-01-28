@@ -1,4 +1,16 @@
 @font-face {
+  font-family: 'robotoblack';
+  src: url('fonts/roboto-black-webfont.eot');
+  src: url('fonts/roboto-black-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/roboto-black-webfont.woff2') format('woff2'),
+  url('fonts/roboto-black-webfont.woff') format('woff'),
+  url('fonts/roboto-black-webfont.ttf') format('truetype'),
+  url('fonts/roboto-black-webfont.svg#robotoblack') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
   font-family: 'robotobold';
   src: url('fonts/roboto-bold-webfont.eot');
   src: url('fonts/roboto-bold-webfont.eot?#iefix') format('embedded-opentype'),
@@ -27,6 +39,29 @@
   url('fonts/roboto-thin-webfont.woff') format('woff'),
   url('fonts/roboto-thin-webfont.ttf') format('truetype'),
   url('fonts/roboto-thin-webfont.svg#robotothin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'robotolight';
+  src: url('fonts/roboto-light-webfont.eot');
+  src: url('fonts/roboto-light-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/roboto-light-webfont.woff') format('woff'),
+  url('fonts/roboto-light-webfont.ttf') format('truetype'),
+  url('fonts/roboto-light-webfont.svg#robotothin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'robotomedium';
+  src: url('fonts/roboto-medium-webfont.eot');
+  src: url('fonts/roboto-medium-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/roboto-medium-webfont.woff2') format('woff2'),
+  url('fonts/roboto-medium-webfont.woff') format('woff'),
+  url('roboto-medium-webfont.ttf') format('truetype'),
+  url('fonts/roboto-medium-webfont.svg#robotomedium') format('svg');
   font-weight: normal;
   font-style: normal;
 
@@ -248,32 +283,33 @@ html, body, .container,.view {
 .appListView{
   margin-top: -5px;
   display:none;
-  font-family: robotoregular;
+  font-family: robotolight;
   &.light{
     color:#4e4e4e;
     background: #f5f5f5;
     h1{
       color:#616161;
-      font-size:24px;
-      font-family: robotoregular;
+      font-size:26px;
+      font-family: robotolight;
+      margin-bottom: 4px;
     }
     h2{
       color:#000000;
-      font-family: robotoregular;
+      font-family: robotolight;
     }
     h3{
       color:#9D9D9D;
       font-size: 16px;
       margin: 3px 15px 15px 15px;
-      font-family: robotoregular;
+      font-family: robotolight;
     }
     h4{
       color:#4e4e4e;
-      font-family: 'robotoregular';
+      font-family: 'robotolight';
     }
     h5{
       color:#4e4e4e;
-      font-family: 'robotoregular';
+      font-family: 'robotolight';
     }
     p{
       color:#616161;
@@ -288,26 +324,27 @@ html, body, .container,.view {
     background: #263238;
     h1{
       color:#ffffff;
-      font-size: 24px;
-      font-family: robotoregular;
+      font-size: 26px;
+      font-family: robotolight;
+      margin-bottom: 4px;
     }
     h2{
       color:#ffffff;
-      font-family: robotoregular;
+      font-family: robotolight;
     }
     h3{
       color:#ffffff;
       font-size: 16px;
       margin: 3px 15px 15px 15px;
-      font-family: robotoregular;
+      font-family: robotolight;
     }
     h4{
       color:#ffffff;
-      font-family: 'robotoregular';
+      font-family: 'robotolight';
     }
     h5{
       color:#ffffff;
-      font-family: 'robotoregular';
+      font-family: 'robotolight';
     }
     p{
       color:#ffffff;
@@ -318,15 +355,15 @@ html, body, .container,.view {
     }
   }
   .header{
-    background: url('../images/headerbg.png') no-repeat top center transparent;
+    background: url('../images/headerbg.png') no-repeat center -25px transparent;
     background-size: cover;
-    min-height: 200px;
+    min-height: 247px;
     margin-bottom: 5px;
     position: relative;
     .topNav{
       width: 100%;
       position: absolute;
-      bottom: 40px;
+      bottom: 60px;
         ul{
           position: relative;
           margin: 0px 8px 0px 8px;
@@ -335,10 +372,35 @@ html, body, .container,.view {
             float: left;
             width: 33%;
             text-align: center;
-            line-height: 150%;
+            font-size: 15px;
+            line-height: 220%;
             color:#ffffff;
-            font-family: 'robotothin';
+            position: relative;
+            font-family: 'robotoregular';
             cursor: pointer;
+            &:before, &:after{
+              content: '';
+              height: 0;
+              width: 0;
+              bottom: 0px;
+              position: absolute;
+              background: rgba(255,255,255,0.3);
+              -webkit-transition: all 2s ease;
+              transition: all 2s ease;
+            }
+            &:before{
+              left: 50%;
+            }
+            &:after {
+              right: 50%;
+            }
+            &.inactive:hover{
+              font-family:'robotobold';
+              &:before, &:after{
+                width: 50%;
+                height: 30px;
+              }
+            }
             span{
               display: block;
               height: 2px;
@@ -348,8 +410,8 @@ html, body, .container,.view {
             &.active{
               span{
                 width:100%;
-                -webkit-animation:1s stringActive ease;
-                animation:1s stringActive ease;
+                -webkit-animation:0.5s stringActive ease;
+                animation:0.5s stringActive ease;
               }
 
             }
@@ -366,7 +428,7 @@ html, body, .container,.view {
     }
   }
   .appListPanel{
-    margin-top:-40px;
+    margin-top:-54px;
     .viewContainer{
       z-index: 100;
     }
@@ -388,16 +450,20 @@ html, body, .container,.view {
             box-shadow: 0px 1px 4px 0px rgba(0,6,0,0.3);
           }
           .wrapper{
-            padding: 8px;
+            padding: 10px;
             .adThumbnail{
               width: 100%;
               height: auto;
               border-radius: 3px;
+              margin-bottom: 7px;
             }
             h2{
-              font-size:13px;
+              font-size: 13px;
               line-height: 150%;
-              margin-bottom: 20px;
+              font-family: robotolight;
+              white-space: normal;
+              height: 36px;
+              text-align: left;
             }
           }
         }
@@ -415,50 +481,52 @@ html, body, .container,.view {
           box-shadow: 0px 1px 4px 0px rgba(0, 6, 0, 0.4);
         }
         .wrapper {
-          padding: 8px;
+          padding: 17px;
           text-align: left;
           overflow: hidden;
           .adThumbnail {
-            width: 40%;
+            width: 47%;
             height: auto;
             border-radius: 3px;
             float: left;
           }
           .campaignInfo {
             float: left;
-            width: 60%;
+            width: 53%;
             .infoinner {
-              padding: 0 10px;
-              border: 0px;
+              padding: 0 0 0 20px;
               h2 {
+                white-space: normal;
+                max-height: 47px;
                 margin: 0px;
-                font-size: 17px;
-                font-weight: bold;
+                font-size: 19px;
+                line-height: 135%;
+                font-family: robotolight;
               }
               .appRate{
-                margin: 5px 0 8px 0;
+                margin: 5px 0 13px 0;
+                height: 15px;
               }
               p{
-                margin-bottom: 20px;
-                height:30px;
+                margin-bottom: 0px;
+                height: 32px;
+                line-height: 135%;
                 overflow: hidden;
-                &:after{
-                  width:100%;
-                  height:10px;
-                  display: block;
-                  border:1px solid red;
-                }
+                font-family: robotolight;
               }
               .btn_download {
                 color: #00BBD3;
-                font-size: 14px;
+                font-size: 15px;
                 margin-top: 10px;
                 position: absolute;
-                font-family: 'robotobold';
-                bottom: 12px;
+                font-family: 'robotomedium';
+                bottom: 24px;
                 img {
-                  width: 20px;
+                  width: 23px;
                   height: auto;
+                  position: relative;
+                  margin-bottom: -3px;
+                  margin-right: 8px;
                 }
               }
             }
@@ -479,17 +547,20 @@ html, body, .container,.view {
             box-shadow: 0px 1px 4px 0px rgba(0, 6, 0, 0.4);
           }
           .wrapper {
-            padding: 8px;
-            text-align: center;
+            padding: 10px;
             .adThumbnail {
               width: 100%;
               height: auto;
               border-radius: 3px;
+              margin-bottom: 7px;
             }
             h2 {
-              font-size:13px;
+              font-size: 13px;
               line-height: 150%;
-              margin-bottom: 20px;
+              font-family: robotolight;
+              white-space: normal;
+              height: 36px;
+              text-align: left;
             }
           }
         }
@@ -512,7 +583,6 @@ html, body, .container,.view {
       }
       .adCol{
         margin: 0px;
-
         width:100%;
         .inner{
           border-radius:3px;
@@ -522,44 +592,52 @@ html, body, .container,.view {
           box-shadow: 0px 1px 4px 0px rgba(0,6,0,0.3);
         }
         .wrapper {
-          padding: 8px;
+          padding: 17px;
           text-align: left;
           overflow: hidden;
           .adThumbnail {
-            width: 40%;
+            width: 47%;
             height: auto;
             border-radius: 3px;
             float: left;
           }
           .campaignInfo {
             float: left;
-            width: 60%;
+            width: 53%;
             .infoinner {
-              padding: 0 10px;
-              border: 0px;
+              padding: 0 0 0 20px;
               h2 {
+                white-space: normal;
+                max-height: 47px;
                 margin: 0px;
-                font-size: 17px;
-                font-weight: bold;
+                font-size: 19px;
+                line-height: 135%;
+                font-family: robotolight;
               }
               .appRate{
-                margin: 5px 0 8px 0;
+                margin: 5px 0 13px 0;
+                height: 15px;
               }
               p{
-                margin-bottom: 20px;
-                height:30px;
+                margin-bottom: 0px;
+                height: 32px;
+                line-height: 135%;
                 overflow: hidden;
+                font-family: robotolight;
               }
               .btn_download {
                 color: #00BBD3;
-                font-size: 14px;
+                font-size: 15px;
                 margin-top: 10px;
                 position: absolute;
-                font-family: 'robotobold';
-                bottom: 12px;
+                font-family: 'robotomedium';
+                bottom: 24px;
                 img {
-                  width: 20px;
+                  width: 23px;
                   height: auto;
+                  position: relative;
+                  margin-bottom: -3px;
+                  margin-right: 8px;
                 }
               }
             }
@@ -602,7 +680,7 @@ html, body, .container,.view {
             box-shadow: 0px 1px 4px 0px rgba(0,6,0,0.3);
           }
           .wrapper{
-            padding: 8px;
+            padding: 14px;
             text-align: left;
             .adThumbnail{
               width: 100%;
@@ -610,15 +688,15 @@ html, body, .container,.view {
               border-radius: 3px;
             }
             h2{
-              width:60%;
-              height:40px;
-              margin:5px 0;
-              font-size:15px;
-              line-height:150%;
+              width: 60%;
+              height: 54px;
+              margin: 5px 0;
+              font-size: 17px;
+              line-height: 150%;
               white-space: normal;
             }
             .btn_download{
-              width:20px;
+              width:15px;
               height:auto;
               float:right;
             }
@@ -655,7 +733,7 @@ html, body, .container,.view {
             border-bottom:1px solid rgba(0,0,0,0.1);
           }
           .wrapper{
-            padding: 8px;
+            padding: 14px;
             text-align: left;
             overflow:hidden;
             .adThumbnail{
@@ -665,14 +743,14 @@ html, body, .container,.view {
               float:left;
             }
             h2{
-              width:50%;
-              margin:5px 0 0 15px;
-              font-size:13px;
-              line-height:40px;
-              float:left;
+              width: 50%;
+              margin: 5px 0 0 15px;
+              font-size: 15px;
+              line-height: 40px;
+              float: left;
             }
             .btn_download{
-              width:20px;
+              width:23px;
               height:auto;
               float:right;
               position:absolute;
