@@ -252,6 +252,49 @@ appWall.controller('appWallCtrl', ['$scope', '$http',  'settingFactory',
     }
 ]);
 
+//work out star rating
+appWall.directive('starRating', function(){
+    return{
+        restrict : "A",
+        template : "<ul class='rating'>" +
+        "  <li ng-repeat='star in stars' ng-class='star'>" +
+        "    <i class='fa fa-star' ng-hide='star.halfStar'></i>" + "    <i class='fa fa-star-half-o' ng-show='star.halfStar'></i>" +
+        "  </li>" +
+        "</ul>",
+        scope : {
+            ratingValue : "=",
+            max : "="
+        },
+        link : function(scope, elem, attrs) {
+            var updateStars = function() {
+                scope.stars = [];
+                for ( var i = 0; i < scope.max; i++){
+                    if(scope.ratingValue - i > 1){
+                        scope.stars.push({
+                            filled : true,
+                            halfStar : false
+                        });
+                    }
+                    else if(scope.ratingValue - i < 1 && scope.ratingValue - i > 0){
+                        scope.stars.push({
+                            filled : true,
+                            halfStar : true
+                        });
+                    }
+                    else{
+                        scope.stars.push({
+                            filled : false,
+                            halfStar : false
+                        });
+                    }
+                }
+            };
+            updateStars();
+
+        }
+    }
+});
+
 //replace image placeholder if data image source fails
 appWall.directive('errSrc', function(){
    return{
